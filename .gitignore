@@ -1,0 +1,34 @@
+# Python 실행 시 생성되는 compile 파일
+*.pyc
+pycache/
+*.pyo
+*.pyd
+
+# 배포/패키징 관련 파일
+build/
+dist/
+*.egg-info/
+*.egg
+sdist/
+develop-eggs/
+eggs/
+lib/
+lib64/
+parts/
+pip-wheel-metadata/
+share/python-wheels/
+wheels/
+
+# 훈련에 사용될 데이터셋 directory
+/data/
+
+# 로그 파일
+*.log
+logs/
+
+# API key, DB 비밀번호 등 민감한 정보
+.env
+*.env
+config.ini
+secrets.yml
+credentials.json
