@@ -89,25 +89,22 @@ cd [프로젝트 폴더명]
 
 이 프로젝트는 conda를 사용한 가상 환경을 권장합니다. [Anaconda](https://www.anaconda.com/products/distribution) 또는 [Miniconda](https://docs.conda.io/en/latest/miniconda.html)가 설치되어 있어야 합니다.
 
+```
 # '[env-name]'라는 이름과 python 버전을 지정하여 conda 가상 환경 생성
-
 # 프로젝트에 맞는 Python 버전을 명시해주세요. (예: python=3.9)
-
 conda create -n [env-name] python=[version]
 
 # 가상 환경 활성화
-
 conda activate [env-name]
 
 # 필요한 패키지 설치
-
 pip install -r requirements.txt
+```
 
-Note:
-
+> Note:
 프로젝트에 필요한 패키지 목록을 requirements.txt 파일로 관리해주세요.
-
 pip freeze > requirements.txt 명령어로 현재 환경의 패키지 목록을 생성할 수 있습니다.
+>
 
 ## **▶️ 실행 방법**
 
