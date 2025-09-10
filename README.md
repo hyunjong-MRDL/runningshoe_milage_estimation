@@ -27,10 +27,9 @@
 
 ### 1. 저장소 복제 (Clone Repository)
 
-```
+```git
 git clone [저장소 URL]
 cd [프로젝트 폴더명]
-
 ```
 
 ### 2. 가상 환경 설정 및 패키지 설치
@@ -47,7 +46,6 @@ conda activate [env-name]
 
 # 필요한 패키지 설치
 pip install -r requirements.txt
-
 ```
 
 > Note:
