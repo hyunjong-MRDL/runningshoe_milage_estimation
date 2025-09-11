@@ -1,6 +1,6 @@
 # Python 실행 시 생성되는 compile 파일
 *.pyc
-pycache/
+__pycache__/
 *.pyo
 *.pyd
 
