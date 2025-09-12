@@ -1,5 +1,3 @@
-from pathlib import Path
-from ..data import data_loader
 import cv2
 
 def resize_image(img_path):
@@ -12,16 +10,21 @@ def normalize_image(img):
     return normalized
 
 if __name__ == "__main__":
+    from pathlib import Path
+
     cwd = Path.cwd()
-    data_root = cwd / r"data"
-    if not data_root.exists():
-        data_root.touch()
+    data_root = cwd / r"data/raw"
+    raw_data = [f for f in data_root.iterdir() if f.is_file()]
 
-    raw_data = data_loader.load_data(data_root, "raw")
-    sample_data = raw_data[0]
-    resized = resize_image(sample_data)
-    normalized = normalize_image(resized)
+    sample = raw_data[0]
+    processed = normalize_image(resize_image(sample))
 
-    cv2.imshow("Image Viewer", normalized)
-    cv2.waitKey(0)
+    cv2.imshow("Image Viewer", processed)
+    cv2.waitKey()
     cv2.destroyAllWindows()
+
+    processed_root = data_root / r"processed"
+    for raw in raw_data:
+        processed_name = processed_root / raw.name
+        processed_img = normalize_image(resize_image(raw))
+        cv2.imwrite(processed_name, processed_img)
